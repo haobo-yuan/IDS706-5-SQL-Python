@@ -1,30 +1,34 @@
-# script.py
+import lib
 
-import polars as pl
-import os
-from lib import preprocess_data, generate_plot
+# Load data
+lib.my_load(nrows=3)
+print("Data loaded into the database.")
 
+# Create a new record
+lib.my_create(record=('2021-10-01', 100, 110, 90, 105, 1000000, 'Imaginary AAPL'))
+print("New record created.")
 
-def main():
-    # Load and preprocess data
-    stock_AAPL = preprocess_data()
+# Read the records
+results = lib.my_read(name='Imaginary AAPL')
+print("Read records:")
+for row in results:
+    print(row)
 
-    # Descriptive Statistics
-    yearly_stats = (
-        stock_AAPL.group_by("Year")
-        .agg(
-            [
-                pl.col("Close").mean().alias("mean"),
-                pl.col("Close").median().alias("median"),
-                pl.col("Close").std().alias("std"),
-            ]
-        )
-        .sort("Year")  # Ensure data is sorted by 'Year'
-    )
+# Update the record
+lib.my_update(name='Imaginary AAPL', new_close=200)
+print("Record updated.")
 
-    # Generate Visualization
-    generate_plot(yearly_stats)
+# Read the records after update
+results = lib.my_read(name='Imaginary AAPL')
+print("Read records after update:")
+for row in results:
+    print(row)
 
+# Delete the record
+lib.my_delete(name='Imaginary AAPL')
+print("Record deleted.")
 
-if __name__ == "__main__":
-    main()
+# Read the records after deletion
+results = lib.my_read(name='Imaginary AAPL')
+print("Read records after deletion:")
+print(results)

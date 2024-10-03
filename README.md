@@ -1,11 +1,20 @@
-![Install Dependencies](https://github.com/haobo-yuan/IDS706-3-Polars-Stat/actions/workflows/install.yml/badge.svg)
-![Format Code](https://github.com/haobo-yuan/IDS706-3-Polars-Stat/actions/workflows/format.yml/badge.svg)
-![Lint Code](https://github.com/haobo-yuan/IDS706-3-Polars-Stat/actions/workflows/lint.yml/badge.svg)
-![Run Tests](https://github.com/haobo-yuan/IDS706-3-Polars-Stat/actions/workflows/test.yml/badge.svg)
+![Install Dependencies](https://github.com/haobo-yuan/IDS706-5-SQL-Python/actions/workflows/install.yml/badge.svg)
+![Format Code](https://github.com/haobo-yuan/IDS706-5-SQL-Python/actions/workflows/format.yml/badge.svg)
+![Lint Code](https://github.com/haobo-yuan/IDS706-5-SQL-Python/actions/workflows/lint.yml/badge.svg)
+![Run Tests](https://github.com/haobo-yuan/IDS706-5-SQL-Python/actions/workflows/test.yml/badge.svg)
 
-# IDS-706 Data Engineering: Project 3
+# IDS-706 Data Engineering: Project 5
+This is a IDS-706 week 5 project that tries to explore Python Script interacting with SQL Database.
+
+## Screenshot of successful database operations
+
+Working in Jupyter Notebook, exploring the data in the database, and implementing CRUD operations.
+![Screenshot](pictures/Succeed in implementing CRUD in Jupyter Notebooks.png)
+
+Then seperate the code into different files, including `lib.py`, `main.py`, `test_lib.py` and `test_main.py`, and run them in the terminal.
+
+
 ## AAPL Price Statistics (2010-2021)
-This is a IDS-706 week 3 project that also calculates the mean, median,and standard deviation of AAPL stock close prices from 2010 to 2021.
 
 ![Logo Nasdaq](pictures/Logo_Nasdaq.png)![Logo AAPL](pictures/Logo_AAPL.png)
 
@@ -26,8 +35,7 @@ The statistics are as follows:
 |   2018 |  47.2634  |  46.5125  |  5.14847  |
 |   2019 |  52.064   |  50.7537  |  8.63474  |
 |   2020 |  95.3471  |  91.6325  | 21.8098   |
-|   2021 | 134.344   | 132.42    |  9.86899  |## Description and Conclusion:
-
+|   2021 | 134.344   | 132.42    |  9.86899  |
 
 ![Plot](pictures/plot.png)
 
@@ -38,33 +46,3 @@ particularly in 2020 and 2021, likely driven by strong demand for electronics du
 and its market leadership in innovation. While volatility increased in the later years, especially
 in 2020 with the standard deviation peaking at 21.81, Apple's overall performance was robust,
 reflecting its resilience and growth in the global tech industry.
-
----
-
-## Projection Structure
-The primary files in this project are:
-```
-    IDS706-3-Polars-Stat/
-    ├── data/
-    │   └── NASDAQ_100_Data_From_2010.csv
-    ├── pictures/
-    │   └── plot.png
-    ├── .github/workflows/
-    │   └── install.yml
-    │   └── format.yml
-    │   └── lint.yml
-    │   └── test.yml
-    ├── lib.py
-    ├── test_lib.py
-    ├── main.ipynb
-    ├── main.py
-    ├── test_main.py
-    ├── README.md
-    ├── requirements.txt
-    └── Makefile
-```
-
-## Demo Video
-Here is a demo video will show you a detailed explanation of continuous integration using GitHub Actions of Python data science project(individual project #1).
-
-[![Watch the video](https://img.youtube.com/vi/yJRoMepMxO8/hqdefault.jpg)](https://youtu.be/yJRoMepMxO8)

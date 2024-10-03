@@ -13,13 +13,13 @@ ruff==0.0.290  # for running pylint on notebooks
 
 # web
 # fastapi==0.111.0  # used when run docs.docker demo
-markdown==3.4.1
+# markdown==3.4.1
 
 
 # data
 numpy==1.22.0
 pandas==2.0.3
-polars==1.7.1  # advanced data manipulation than pandas
-matplotlib==3.7.1
+# polars==1.7.1  # advanced data manipulation than pandas
+# matplotlib==3.7.1
 tabulate==0.8.9  # for pretty printing dataframes
-seaborn==0.11.2  # for pretty plots
+# seaborn==0.11.2  # for pretty plots
