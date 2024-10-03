@@ -8,11 +8,17 @@ This is a IDS-706 week 5 project that tries to explore Python Script interacting
 
 ## Screenshot of successful database operations
 
-Working in Jupyter Notebook, exploring the data in the database, and implementing CRUD operations.
-![Screenshot](pictures/Succeed in implementing CRUD in Jupyter Notebooks.png)
+1. Working in Jupyter Notebook, exploring the data in the database, and implementing CRUD operations.
 
-Then seperate the code into different files, including `lib.py`, `main.py`, `test_lib.py` and `test_main.py`, and run them in the terminal.
+![Screenshot_Notebook](pictures/Succeed_in_implementing_CRUD_in_Jupyter_Notebooks.png)
 
+2. Then seperate the code into different files, including `lib.py`, `main.py`, `test_lib.py` and `test_main.py`, and run them in the terminal.
+
+![Screenshot_main](pictures/Succeed_in_main.png)
+
+![Screenshot_test_lib](pictures/Succeed_in_test_lib.png)
+
+![Screenshot_test_main](pictures/Succeed_in_test_main.png)
 
 ## AAPL Price Statistics (2010-2021)
 

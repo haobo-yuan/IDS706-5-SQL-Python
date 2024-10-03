@@ -1,11 +1,14 @@
-# lib.py
-
 import sqlite3
 import pandas as pd
 
-def my_load(db_path='data/nasdaq.db', csv_path='data/NASDAQ_100_Data_From_2010.csv', nrows=None):
+def my_load(db_path, csv_path, nrows=None):
     """
     Load data from a CSV file into a SQLite database.
+
+    Parameters:
+    - db_path: Path to the SQLite database file.
+    - csv_path: Path to the CSV file to be loaded.
+    - nrows: Number of rows to read from the CSV file.
     """
     with sqlite3.connect(db_path) as conn:
         # Read data from the CSV file
@@ -16,12 +19,14 @@ def my_load(db_path='data/nasdaq.db', csv_path='data/NASDAQ_100_Data_From_2010.c
         # Write the DataFrame to the 'stocks' table
         df.to_sql('stocks', conn, if_exists='replace', index=False)
 
-def my_create(db_path='data/nasdaq.db', record=None):
+def my_create(db_path, record):
     """
     Insert a new record into the 'stocks' table.
+
+    Parameters:
+    - db_path: Path to the SQLite database file.
+    - record: Tuple containing the record data.
     """
-    if record is None:
-        record = ('2021-10-01', 100, 110, 90, 105, 1000000, 'Imaginary AAPL')
     with sqlite3.connect(db_path) as conn:
         cursor = conn.cursor()
         cursor.execute("""
@@ -30,10 +35,16 @@ def my_create(db_path='data/nasdaq.db', record=None):
         """, record)
         conn.commit()
 
-def my_read(db_path='data/nasdaq.db', name='Imaginary AAPL'):
+def my_read(db_path, name):
     """
     Read records from the 'stocks' table where Name matches.
-    Returns the result as a list of tuples.
+
+    Parameters:
+    - db_path: Path to the SQLite database file.
+    - name: Name of the stock to read.
+
+    Returns:
+    - List of tuples containing the query results.
     """
     with sqlite3.connect(db_path) as conn:
         cursor = conn.cursor()
@@ -41,18 +52,27 @@ def my_read(db_path='data/nasdaq.db', name='Imaginary AAPL'):
         results = cursor.fetchall()
     return results
 
-def my_update(db_path='data/nasdaq.db', name='Imaginary AAPL', new_close=200):
+def my_update(db_path, name, new_close):
     """
     Update the 'Close' value of a record in the 'stocks' table.
+
+    Parameters:
+    - db_path: Path to the SQLite database file.
+    - name: Name of the stock to update.
+    - new_close: New value for the 'Close' field.
     """
     with sqlite3.connect(db_path) as conn:
         cursor = conn.cursor()
         cursor.execute("UPDATE stocks SET Close = ? WHERE Name = ?", (new_close, name))
         conn.commit()
 
-def my_delete(db_path='data/nasdaq.db', name='Imaginary AAPL'):
+def my_delete(db_path, name):
     """
     Delete records from the 'stocks' table where Name matches.
+
+    Parameters:
+    - db_path: Path to the SQLite database file.
+    - name: Name of the stock to delete.
     """
     with sqlite3.connect(db_path) as conn:
         cursor = conn.cursor()

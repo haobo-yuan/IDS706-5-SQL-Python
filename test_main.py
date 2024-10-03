@@ -1,5 +1,3 @@
-# test_main.py
-
 import subprocess
 
 def test_main():
@@ -8,6 +6,8 @@ def test_main():
     # Check if the script ran successfully
     assert result.returncode == 0
     print("main.py ran successfully.")
+    # Optionally, you can print or check the output
+    # print(result.stdout)
 
 if __name__ == "__main__":
     test_main()
